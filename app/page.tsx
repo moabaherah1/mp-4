@@ -33,11 +33,11 @@ export default async function Home() {
                         <h2 className="text-lg font-semibold mt-3">{book.title}</h2>
 
                         <p className="text-sm text-gray-700">
-                            Author: {book.authors?.[0]?.name}
+                            Author: {book.authors?.[0]?.name ?? "Unknown"}
                         </p>
 
                         <p className="text-sm text-yellow-600 font-medium">
-                            Rating: {book.rating?.average?.toFixed(2)}
+                            Rating: {book.rating?.average?.toFixed(2) ?? "No rating"}
                         </p>
                     </div>
                 ))}
