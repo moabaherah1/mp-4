@@ -16,9 +16,7 @@ export default async function Home() {
 
     return (
         <main className="p-6">
-            <h1
-                className="text-4xl font-bold text-center mb-8">
-            </h1>
+            <h1 className="text-4xl font-bold text-center mb-8"></h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {books.map((book: BookTypes) => (
@@ -31,11 +29,19 @@ export default async function Home() {
                             alt={book.title}
                             className="w-full h-full object-cover rounded"
                         />
+
                         <h2 className="text-lg font-semibold mt-3">{book.title}</h2>
+
+                        <p className="text-sm text-gray-700">
+                            Author: {book.authors?.[0]?.name}
+                        </p>
+
+                        <p className="text-sm text-yellow-600 font-medium">
+                            Rating: {book.rating?.average?.toFixed(2)}
+                        </p>
                     </div>
                 ))}
             </div>
         </main>
     );
 }
-
